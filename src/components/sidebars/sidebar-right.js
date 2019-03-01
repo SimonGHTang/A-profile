@@ -2,16 +2,12 @@ import React from "react";
 import { Sidebar, Menu, Icon, Divider, Popup } from "semantic-ui-react";
 
 export default (props) => {
-
   return (
-    <Sidebar  as={Menu} animation='overlay' direction='right'
-      inverted
-      vertical
-      visible={props.visible}
-      width='small'
+    <Sidebar as={Menu} animation='overlay' direction='right'
+      inverted vertical visible={props.visible} width='small'
     >
-      <Menu.Item as='a5' header><h4><Icon name="external"  />External Links</h4></Menu.Item>
-      <Divider fitted/>
+      <Menu.Item as='h2' header><h4><Icon name="external"  />External Links</h4></Menu.Item>
+      <Divider />
       <Popup
         trigger={<Menu.Item as="a" header href="https://github.com/SimonGHTang/A-profile"><Icon name="git square" size="large" />GitHub </Menu.Item>}
         header="GitHub"

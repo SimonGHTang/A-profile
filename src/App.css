@@ -12,9 +12,9 @@ body {
   height: 100vh;
 }
 
-.centralised {
+.body-padding {
   padding: 25px;
-  height: 0.91vh;
+  height: 100%;
 }
 
 #root {
@@ -29,6 +29,26 @@ body {
 
 .background-hyperion {
   background-image: url("/img/hyperion.jpg") !important;
+}
+
+.background-castle {
+  background-image: url("/img/castle.jpg") !important;
+}
+
+.background-earth {
+  background-image: url("/img/earth-light.jpg") !important;
+}
+
+.background-robot {
+  background-image: url("/img/robot-laputa.jpg") !important;
+}
+
+.background-night {
+  background-image: url("/img/night-sky.jpg") !important;
+}
+
+.background-sunset {
+  background-image: url("/img/sunset-red.jpg") !important;
 }
 
 @keyframes App-logo-spin {
