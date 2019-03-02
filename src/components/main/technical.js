@@ -12,11 +12,10 @@ export default class Profile extends Component {
 
     this.state = {
       like: 0,
-      views: 0,
     }
   }
 
-  like() { this.setState({ like: this.state.like + 1 })}
+  like() { this.setState({ like: this.state.like + 1 }) };
   
   render() {
     return (
@@ -53,7 +52,7 @@ export default class Profile extends Component {
               <Menu.Item as='a'>
               <Icon name='eye' /> Views
               <Label color='red' floating>
-                  {this.state.views}
+                  {this.props.views}
               </Label>
               </Menu.Item>
             </Menu>

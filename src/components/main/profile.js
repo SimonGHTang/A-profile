@@ -5,33 +5,23 @@ export default class Profile extends Component {
   
   render() {
     return (
-      <Grid >
-        <Grid.Column width={2}>
-        </Grid.Column>
-        <Grid.Column width={12} className={this.props.bodyOpacity} onMouseLeave={this.props.sidebarShow} onMouseOver={this.props.sidebarHide} >
-          <div className="body-padding">
-            <Segment  color="blue">
-              <Label color="blue" ribbon>Profile</Label>
-              <Header as="h1" color="grey">Hello!</Header>
+      <Segment  color="blue">
+        <Label color="blue" ribbon>Profile</Label>
+        <Header as="h1" color="grey">Hello!</Header>
 
-              <Divider/>
+        <Divider/>
 
-              <Grid column={2} divided>
-                <Grid.Column>
-                  <Image src="img/me.jpg" size="medium" />
-                </Grid.Column>
-                <Grid.Column>
+        <Grid column={2} divided>
+          <Grid.Column>
+            <Image src="img/me.jpg" size="medium" />
+          </Grid.Column>
+          <Grid.Column>
 
-                </Grid.Column>
-              </Grid>
+          </Grid.Column>
+        </Grid>
 
-              
-            </Segment>
-          </div>
-        </Grid.Column>
-        <Grid.Column width={2}>
-        </Grid.Column>
-      </Grid>
+        
+      </Segment>
     )
   }
 }

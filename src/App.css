@@ -13,7 +13,7 @@ body {
 }
 
 .body-padding {
-  padding: 25px;
+  padding: 25px !important;
   height: 100%;
 }
 
@@ -77,6 +77,23 @@ body {
 
 .sidebar {
   width: 185px !important;
+}
+
+.gallery-image {
+  height:270px !important;
+  width:180px !important;
+}
+
+.gallery-row {
+  height: 270px !important;
+}
+
+.gallery-column {
+  width: 405px !important;
+}
+
+.center-modal {
+  top: 20% !important;
 }
 
 @keyframes App-logo-spin {

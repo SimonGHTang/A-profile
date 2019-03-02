@@ -7,6 +7,7 @@ import Welcome from "./main/welcome.js";
 import Profile from "./main/profile.js";
 import Technical from "./main/technical.js";
 import AboutMe from './main/about-me.js';
+import Gallery from './main/gallery.js';
 
 import SidebarLeft from "./sidebars/sidebar-left.js";
 import SidebarRight from "./sidebars/sidebar-right.js";
@@ -16,14 +17,14 @@ class Landing extends Component {
     super();
     this.state = { 
       background: "background-earth",
-      sidebarVisible: true,
-      backgroundView: false,
+      sidebarVisible: false,
       bodyOpacity: "opacity-90",
+      views: 0,
     }
   }
 
-  sidebarShow = () => this.setState({ sidebarVisible: true })
-  sidebarHide = () => this.setState({ sidebarVisible: false })
+  sidebarShow = () => this.setState({ sidebarVisible: true });
+  sidebarHide = () => this.setState({ sidebarVisible: false });
 
   selectWelcome() {
     this.props.history.replace("/");
@@ -51,13 +52,13 @@ class Landing extends Component {
   }
 
   selectTechnical() {
+    this.setState({ views: this.state.views + 1 });
     this.props.history.replace("/technical");
     this.setState({background: "background-clockwork"});
   }
 
   viewBackground() {
     this.state.bodyOpacity === "opacity-90" ? this.setState({bodyOpacity: "opacity-0"}) : this.setState({bodyOpacity: "opacity-90"});
-    
   }
 
   render() {
@@ -76,19 +77,17 @@ class Landing extends Component {
           
         <SidebarRight visible={this.state.sidebarVisible} />
         <Sidebar.Pusher>
-          < Grid >
+          < Grid className="body-padding">
             <Grid.Column width={2}> </Grid.Column>
-            <Grid.Column width={12} className={this.props.bodyOpacity} onMouseLeave={this.props.sidebarShow} onMouseOver={this.props.sidebarHide} >
-              <div className="body-padding">
-                <Switch>
-                    <Route exact path="/" render = { props => <Welcome sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} bodyOpacity={this.state.bodyOpacity} {...props} /> } />
-                    <Route path="/profile" render = { props => <Profile sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} bodyOpacity={this.state.bodyOpacity} {...props} /> } />
-                    <Route path="/about-me" render = { props => <AboutMe sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} bodyOpacity={this.state.bodyOpacity} {...props} /> } />
-                    <Route path="/games" render = { props => <Welcome sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} bodyOpacity={this.state.bodyOpacity} {...props} /> } />
-                    <Route path="/gallery" render = { props => <Welcome sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} bodyOpacity={this.state.bodyOpacity} {...props} /> } />
-                    <Route path="/technical" render = { props =><Technical sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} bodyOpacity={this.state.bodyOpacity} {...props}  /> } />
-                </Switch>
-              </div>
+            <Grid.Column width={12} className={this.state.bodyOpacity} onMouseLeave={this.sidebarShow.bind(this)} onMouseOver={this.sidebarHide.bind(this)} >
+              <Switch>
+                  <Route exact path="/" render = { props => <Welcome {...props} /> } />
+                  <Route path="/profile" render = { props => <Profile {...props} /> } />
+                  <Route path="/about-me" render = { props => <AboutMe {...props} /> } />
+                  <Route path="/games" render = { props => <Welcome {...props} /> } />
+                  <Route path="/gallery" render = { props => <Gallery {...props} /> } />
+                  <Route path="/technical" render = { props =><Technical views={this.state.views} {...props} /> } />
+              </Switch>
             </Grid.Column>
             <Grid.Column width={2}></Grid.Column>
           </ Grid>
