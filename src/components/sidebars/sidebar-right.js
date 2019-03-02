@@ -6,7 +6,7 @@ export default (props) => {
     <Sidebar as={Menu} animation='overlay' direction='right'
       inverted vertical visible={props.visible} width='small'
     >
-      <Menu.Item as='h2' header><h4><Icon name="external"  />External Links</h4></Menu.Item>
+      <Menu.Item as='h4' header><Icon name="external"  />External Links</Menu.Item>
       <Divider />
       <Popup
         trigger={<Menu.Item as="a" header href="https://github.com/SimonGHTang/A-profile"><Icon name="git square" size="large" />GitHub </Menu.Item>}

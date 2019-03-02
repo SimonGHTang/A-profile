@@ -51,6 +51,26 @@ body {
   background-image: url("/img/sunset-red.jpg") !important;
 }
 
+.background-clockwork {
+  background-image: url("/img/clockwork.png") !important;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-10 {
+  opacity: 0.1;
+}
+
+.opacity-90 {
+  opacity: 0.92;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

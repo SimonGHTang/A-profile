@@ -22,9 +22,17 @@ export default (props) => {
         <Icon name='gamepad' />
         Games
       </Menu.Item>
-      <Menu.Item as='a' onClick={props.selectBackground} >
-        <Icon name='expand' />
-        View Background Image
+      <Menu.Item as='a' onClick={props.selectGallery} >
+        <Icon name='image' />
+        View Gallery
+      </Menu.Item>
+      <Menu.Item as='a' onClick={props.viewBackground} >
+        <Icon name='expand arrows alternate' />
+        View Background
+      </Menu.Item>
+      <Menu.Item as='a' onClick={props.selectTechnical}>
+        <Icon name="wrench"/>
+        Technical
       </Menu.Item>
     </Sidebar>
   );

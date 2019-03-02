@@ -4,6 +4,9 @@ import { Switch, Route } from 'react-router-dom';
 import '../App.css';
 
 import Welcome from "./main/welcome.js";
+import Profile from "./main/profile.js";
+import Technical from "./main/technical.js";
+
 import SidebarLeft from "./sidebars/sidebar-left.js";
 import SidebarRight from "./sidebars/sidebar-right.js";
 
@@ -14,7 +17,7 @@ class Landing extends Component {
       background: "background-earth",
       sidebarVisible: true,
       backgroundView: false,
-      page: ""
+      bodyOpacity: "opacity-90",
     }
   }
 
@@ -26,14 +29,14 @@ class Landing extends Component {
     this.setState({background: "background-earth"});
   }
 
-  selectAbout() {
-    this.props.history.replace("/about-me");
-    this.setState({background: "background-castle"});
-  }
-
   selectProfile() {
     this.props.history.replace("/profile");
     this.setState({background: "background-robot"});
+  }
+
+  selectAbout() {
+    this.props.history.replace("/about-me");
+    this.setState({background: "background-castle"});
   }
   
   selectGames() {
@@ -41,8 +44,19 @@ class Landing extends Component {
     this.setState({background: "background-hyperion"});
   }
 
-  selectBackgrounds() {
-    this.props.history.replace("/backgrounds");
+  selectGallery() {
+    this.props.history.replace("/gallery");
+    this.setState({background: "background-hyperion"});
+  }
+
+  selectTechnical() {
+    this.props.history.replace("/technical");
+    this.setState({background: "background-clockwork"});
+  }
+
+  viewBackground() {
+    this.state.bodyOpacity === "opacity-90" ? this.setState({bodyOpacity: "opacity-0"}) : this.setState({bodyOpacity: "opacity-90"});
+    
   }
 
   render() {
@@ -51,20 +65,24 @@ class Landing extends Component {
         <SidebarLeft 
           visible={this.state.sidebarVisible} 
           selectWelcome={this.selectWelcome.bind(this)}
-          selectAbout={this.selectAbout.bind(this)}
           selectProfile={this.selectProfile.bind(this)}
+          selectAbout={this.selectAbout.bind(this)}
           selectGames={this.selectGames.bind(this)}
-          selectBackgrounds={this.selectBackgrounds.bind(this)} 
+          selectGallery={this.selectGallery.bind(this)}
+          selectTechnical={this.selectTechnical.bind(this)}
+          viewBackground={this.viewBackground.bind(this)} 
+
         />
           
         <SidebarRight visible={this.state.sidebarVisible} />
         <Sidebar.Pusher>
             <Switch>
-                <Route exact path="/" render = { props => <Welcome className="main" sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} {...props} /> } />
-                <Route exact path="/about-me" render = { props => <Welcome className="main" sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} {...props} /> } />
-                <Route exact path="/profile" render = { props => <Welcome className="main" sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} {...props} /> } />
-                <Route exact path="/games" render = { props => <Welcome className="main" sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} {...props} /> } />
-                <Route exact path="/backgrounds" render = { props => <Welcome className="main" sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} {...props} /> } />
+                <Route exact path="/" render = { props => <Welcome sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} bodyOpacity={this.state.bodyOpacity} {...props} /> } />
+                <Route path="/profile" render = { props => <Profile sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} bodyOpacity={this.state.bodyOpacity} {...props} /> } />
+                <Route path="/about-me" render = { props => <Welcome sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} bodyOpacity={this.state.bodyOpacity} {...props} /> } />
+                <Route path="/games" render = { props => <Welcome sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} bodyOpacity={this.state.bodyOpacity} {...props} /> } />
+                <Route path="/gallery" render = { props => <Welcome sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} bodyOpacity={this.state.bodyOpacity} {...props} /> } />
+                <Route path="/technical" render = { props =><Technical sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} bodyOpacity={this.state.bodyOpacity} {...props}  /> } />
             </Switch>
         </Sidebar.Pusher>
       </Sidebar.Pushable>  
