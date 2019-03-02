@@ -71,6 +71,14 @@ body {
   opacity: 1;
 }
 
+.card-image {
+  height: 340px !important;
+}
+
+.sidebar {
+  width: 185px !important;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

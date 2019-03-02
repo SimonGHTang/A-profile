@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { Segment, Sidebar } from 'semantic-ui-react';
+import { Segment, Sidebar, Grid } from 'semantic-ui-react';
 import { Switch, Route } from 'react-router-dom';
 import '../App.css';
 
 import Welcome from "./main/welcome.js";
 import Profile from "./main/profile.js";
 import Technical from "./main/technical.js";
+import AboutMe from './main/about-me.js';
 
 import SidebarLeft from "./sidebars/sidebar-left.js";
 import SidebarRight from "./sidebars/sidebar-right.js";
@@ -70,20 +71,27 @@ class Landing extends Component {
           selectGames={this.selectGames.bind(this)}
           selectGallery={this.selectGallery.bind(this)}
           selectTechnical={this.selectTechnical.bind(this)}
-          viewBackground={this.viewBackground.bind(this)} 
-
+          viewBackground={this.viewBackground.bind(this)}
         />
           
         <SidebarRight visible={this.state.sidebarVisible} />
         <Sidebar.Pusher>
-            <Switch>
-                <Route exact path="/" render = { props => <Welcome sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} bodyOpacity={this.state.bodyOpacity} {...props} /> } />
-                <Route path="/profile" render = { props => <Profile sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} bodyOpacity={this.state.bodyOpacity} {...props} /> } />
-                <Route path="/about-me" render = { props => <Welcome sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} bodyOpacity={this.state.bodyOpacity} {...props} /> } />
-                <Route path="/games" render = { props => <Welcome sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} bodyOpacity={this.state.bodyOpacity} {...props} /> } />
-                <Route path="/gallery" render = { props => <Welcome sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} bodyOpacity={this.state.bodyOpacity} {...props} /> } />
-                <Route path="/technical" render = { props =><Technical sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} bodyOpacity={this.state.bodyOpacity} {...props}  /> } />
-            </Switch>
+          < Grid >
+            <Grid.Column width={2}> </Grid.Column>
+            <Grid.Column width={12} className={this.props.bodyOpacity} onMouseLeave={this.props.sidebarShow} onMouseOver={this.props.sidebarHide} >
+              <div className="body-padding">
+                <Switch>
+                    <Route exact path="/" render = { props => <Welcome sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} bodyOpacity={this.state.bodyOpacity} {...props} /> } />
+                    <Route path="/profile" render = { props => <Profile sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} bodyOpacity={this.state.bodyOpacity} {...props} /> } />
+                    <Route path="/about-me" render = { props => <AboutMe sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} bodyOpacity={this.state.bodyOpacity} {...props} /> } />
+                    <Route path="/games" render = { props => <Welcome sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} bodyOpacity={this.state.bodyOpacity} {...props} /> } />
+                    <Route path="/gallery" render = { props => <Welcome sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} bodyOpacity={this.state.bodyOpacity} {...props} /> } />
+                    <Route path="/technical" render = { props =><Technical sidebarShow={this.sidebarShow.bind(this)} sidebarHide={this.sidebarHide.bind(this)} bodyOpacity={this.state.bodyOpacity} {...props}  /> } />
+                </Switch>
+              </div>
+            </Grid.Column>
+            <Grid.Column width={2}></Grid.Column>
+          </ Grid>
         </Sidebar.Pusher>
       </Sidebar.Pushable>  
     );

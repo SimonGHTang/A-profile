@@ -4,7 +4,7 @@ import { Sidebar, Menu, Icon } from "semantic-ui-react";
 export default (props) => {
   return (
     <Sidebar as={Menu} animation='overlay' direction='left' icon='labeled'
-      inverted vertical visible={props.visible} width='small'
+      inverted vertical visible={props.visible} className="sidebar"
     >
       <Menu.Item as='a' onClick={props.selectWelcome} >
         <Icon name='desktop' />
@@ -26,13 +26,13 @@ export default (props) => {
         <Icon name='image' />
         View Gallery
       </Menu.Item>
-      <Menu.Item as='a' onClick={props.viewBackground} >
-        <Icon name='expand arrows alternate' />
-        View Background
-      </Menu.Item>
       <Menu.Item as='a' onClick={props.selectTechnical}>
         <Icon name="wrench"/>
         Technical
+      </Menu.Item>
+      <Menu.Item as='a' onClick={props.viewBackground} >
+        <Icon name='expand arrows alternate' />
+        View Background
       </Menu.Item>
     </Sidebar>
   );
