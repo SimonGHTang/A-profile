@@ -29,6 +29,7 @@ body {
 
 .background-hyperion {
   background-image: url("/img/hyperion.jpg") !important;
+  
 }
 
 .background-castle {
@@ -47,28 +48,12 @@ body {
   background-image: url("/img/night-sky.jpg") !important;
 }
 
-.background-sunset {
-  background-image: url("/img/sunset-red.jpg") !important;
+.background-wormhole {
+  background-image: url("/img/wormhole.jpg") !important;
 }
 
 .background-clockwork {
   background-image: url("/img/clockwork.png") !important;
-}
-
-.opacity-0 {
-  opacity: 0;
-}
-
-.opacity-10 {
-  opacity: 0.1;
-}
-
-.opacity-90 {
-  opacity: 0.92;
-}
-
-.opacity-100 {
-  opacity: 1;
 }
 
 .card-image {
@@ -79,28 +64,22 @@ body {
   width: 185px !important;
 }
 
-.gallery-image {
-  height:270px !important;
-  width:180px !important;
+.gallery-scroll {
+  height:780px !important;
+  overflow-y: auto !important;
 }
 
-.gallery-row {
-  height: 270px !important;
-}
-
-.gallery-column {
-  width: 405px !important;
+.gallery-grid-width {
+  width: 1355px !important;
 }
 
 .center-modal {
   top: 20% !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.profile-image {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 }

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Grid, Segment, Label, Header, Divider, Modal, Image } from 'semantic-ui-react';
+import { Grid, Segment, Label, Header, Divider } from 'semantic-ui-react';
+
+import GalleryModule from './gallery-module.js'
 
 export default class AboutMe extends Component {
   
@@ -10,88 +12,52 @@ export default class AboutMe extends Component {
         <Header as="h1" color="grey">Some Nice Pictures I like~</Header>
         <Divider/>
 
-        <Grid divided >
-          <Grid.Row centered >
-            <Grid.Column width={5} >
-              { <Modal className="center-modal" trigger={<Image size="large" src="img/ship-sail.jpg" />}>
-                <Modal.Content >
-                  <Image centered src="img/ship-sail.jpg" />
-                </Modal.Content>
-              </Modal> }
-            </Grid.Column>
+        <div className='gallery-scroll' >
+          <Grid className='gallery-grid-width' divided centered >
+            <Grid.Row centered >
+              <GalleryModule imageSource="img/castle.jpg"/>
+              <GalleryModule imageSource="img/planet-colour.jpg"/>
+              <GalleryModule imageSource="img/sunset-red.jpg"/>
+            </Grid.Row>
 
-            <Grid.Column width={5} >
-              <Modal className="center-modal" trigger={<Image size="large" src="img/ruined-castle.jpg" />}>
-                  <Modal.Content >
-                    <Image centered src="img/ruined-castle.jpg" />
-                  </Modal.Content>
-                </Modal>
-            </Grid.Column>
+            <Grid.Row centered >
+              <GalleryModule imageSource="img/wormhole.jpg"/>
+              <GalleryModule imageSource="img/night-sky.jpg"/>
+              <GalleryModule imageSource="img/earth-light.jpg"/>
+            </Grid.Row>
 
-            <Grid.Column width={5} >
-              <Modal className="center-modal" trigger={<Image size="large" src="img/sunset-red.jpg" />}>
-                <Modal.Content >
-                  <Image centered src="img/sunset-red.jpg" />
-                </Modal.Content>
-              </Modal>
-            </Grid.Column>
-          </Grid.Row>
+            <Grid.Row centered >
+              <GalleryModule imageSource="img/ruined-castle.jpg"/>
+              <GalleryModule imageSource="img/citadel.jpg"/>
+              <GalleryModule imageSource="img/dracula-castle.jpg"/>
+            </Grid.Row>
 
-          <Grid.Row centered >
-            <Grid.Column width={5} >
-              { <Modal className="center-modal" trigger={<Image size="large" src="img/planet-colour.jpg" />}>
-                <Modal.Content >
-                  <Image centered src="img/castle.jpg" />
-                </Modal.Content>
-              </Modal> }
-            </Grid.Column>
+            <Grid.Row centered >
+              <GalleryModule imageSource="img/ship-sail.jpg"/>
+              <GalleryModule imageSource="img/dragon.jpg"/>
+              <GalleryModule imageSource="img/forest-dragon.jpg"/>
+            </Grid.Row>
+            
+            <Grid.Row centered >
+              <GalleryModule imageSource="img/hyperion.jpg"/>
+              <GalleryModule imageSource="img/steampunk-ship.jpg"/>
+              <GalleryModule imageSource="img/strange-ship.jpg"/>
+            </Grid.Row>
 
-            <Grid.Column width={5} >
-              <Modal className="center-modal" trigger={<Image size="large" src="img/robo-head.jpg" />}>
-                  <Modal.Content >
-                    <Image centered src="img/clockwork.png" />
-                  </Modal.Content>
-                </Modal>
-            </Grid.Column>
+            <Grid.Row centered >
+              <GalleryModule imageSource="img/robot-laputa.jpg"/>
+              <GalleryModule imageSource="img/robot-head.jpg"/>
+              <GalleryModule imageSource="img/clockwork.png"/>
+            </Grid.Row>
 
-            <Grid.Column width={5} >
-              <Modal className="center-modal" trigger={<Image size="large" src="img/strange-ship.jpg" />}>
-                <Modal.Content >
-                  <Image centered src="img/earth-light.jpg" />
-                </Modal.Content>
-              </Modal>
-            </Grid.Column>
-          </Grid.Row>
+            <Grid.Row centered >
+              <GalleryModule imageSource="img/tree.jpg"/>
+              <GalleryModule imageSource="img/flower-pot.jpg"/>
+              <GalleryModule imageSource="img/bonsai-tree.jpg"/>
+            </Grid.Row>
+          </Grid>
+        </div>
 
-          <Grid.Row centered >
-            <Grid.Column width={5} >
-              { <Modal className="center-modal" trigger={<Image size="large" src="img/steampunk-ship.jpg" />}>
-                <Modal.Content >
-                  <Image centered src="img/hyperion.jpg" />
-                </Modal.Content>
-              </Modal> }
-            </Grid.Column>
-
-            <Grid.Column width={5} >
-              <Modal className="center-modal" trigger={<Image size="large" src="img/citadel.jpg" />}>
-                  <Modal.Content >
-                    <Image centered src="img/robot-laputa.jpg" />
-                  </Modal.Content>
-                </Modal>
-            </Grid.Column>
-
-            <Grid.Column width={5} >
-              <Modal className="center-modal" trigger={<Image size="large" src="img/wormhole.jpg" />}>
-                <Modal.Content >
-                  <Image centered src="img/night-sky.jpg" />
-                </Modal.Content>
-              </Modal>
-            </Grid.Column>
-          </Grid.Row>
-
-        </Grid>
-
-        
       </Segment>
     )
   }

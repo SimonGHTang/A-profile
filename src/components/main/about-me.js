@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Segment, Label, Header, Divider, Image, Icon, Step } from 'semantic-ui-react';
+import { Grid, Segment, Label, Header, Divider, Image } from 'semantic-ui-react';
 
 export default class AboutMe extends Component {
   
@@ -18,20 +18,6 @@ export default class AboutMe extends Component {
           <Grid.Column>
             <Image src="img/me.jpg" size="large" centered />
           </Grid.Column>
-          <Step.Group>
-            <Step>
-                <Icon name="heart" color="red" />
-                <Step.Content>
-                    <Step.Title>Say Hi!</Step.Title>
-                </Step.Content>
-            </Step>
-            <Step>
-                <Icon name="heart"/>
-                <Step.Content>
-                    <Step.Title>Ok</Step.Title>
-                </Step.Content>
-            </Step>
-        </Step.Group>
         </Grid>
 
         

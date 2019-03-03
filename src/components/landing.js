@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Segment, Sidebar, Grid } from 'semantic-ui-react';
+import { Segment, Sidebar, Grid, Transition } from 'semantic-ui-react';
 import { Switch, Route } from 'react-router-dom';
 import '../App.css';
 
@@ -16,6 +16,7 @@ class Landing extends Component {
   constructor() {
     super();
     this.state = { 
+      visible: true,
       background: "background-earth",
       sidebarVisible: false,
       bodyOpacity: "opacity-90",
@@ -25,6 +26,8 @@ class Landing extends Component {
 
   sidebarShow = () => this.setState({ sidebarVisible: true });
   sidebarHide = () => this.setState({ sidebarVisible: false });
+
+  toggleVisibility = () => this.setState({ visible: !this.state.visible });
 
   selectWelcome() {
     this.props.history.replace("/");
@@ -41,9 +44,9 @@ class Landing extends Component {
     this.setState({background: "background-castle"});
   }
   
-  selectGames() {
-    this.props.history.replace("/games");
-    this.setState({background: "background-hyperion"});
+  selectButtons() {
+    this.props.history.replace("/buttons");
+    this.setState({background: "background-wormhole"});
   }
 
   selectGallery() {
@@ -57,10 +60,6 @@ class Landing extends Component {
     this.setState({background: "background-clockwork"});
   }
 
-  viewBackground() {
-    this.state.bodyOpacity === "opacity-90" ? this.setState({bodyOpacity: "opacity-0"}) : this.setState({bodyOpacity: "opacity-90"});
-  }
-
   render() {
     return (
       <Sidebar.Pushable as={Segment} basic id="background" className={this.state.background}>
@@ -69,26 +68,28 @@ class Landing extends Component {
           selectWelcome={this.selectWelcome.bind(this)}
           selectProfile={this.selectProfile.bind(this)}
           selectAbout={this.selectAbout.bind(this)}
-          selectGames={this.selectGames.bind(this)}
+          selectButtons={this.selectButtons.bind(this)}
           selectGallery={this.selectGallery.bind(this)}
           selectTechnical={this.selectTechnical.bind(this)}
-          viewBackground={this.viewBackground.bind(this)}
+          viewBackground={this.toggleVisibility.bind(this)}
         />
           
         <SidebarRight visible={this.state.sidebarVisible} />
         <Sidebar.Pusher>
           < Grid className="body-padding">
             <Grid.Column width={2}> </Grid.Column>
-            <Grid.Column width={12} className={this.state.bodyOpacity} onMouseLeave={this.sidebarShow.bind(this)} onMouseOver={this.sidebarHide.bind(this)} >
-              <Switch>
-                  <Route exact path="/" render = { props => <Welcome {...props} /> } />
-                  <Route path="/profile" render = { props => <Profile {...props} /> } />
-                  <Route path="/about-me" render = { props => <AboutMe {...props} /> } />
-                  <Route path="/games" render = { props => <Welcome {...props} /> } />
-                  <Route path="/gallery" render = { props => <Gallery {...props} /> } />
-                  <Route path="/technical" render = { props =><Technical views={this.state.views} {...props} /> } />
-              </Switch>
-            </Grid.Column>
+            <Transition visible={this.state.visible} animation='fade up' duration={500}>
+              <Grid.Column width={12} onMouseLeave={this.sidebarShow.bind(this)} onMouseOver={this.sidebarHide.bind(this)} >
+                <Switch>
+                    <Route exact path="/" component = { Welcome } />
+                    <Route path="/profile" component = { Profile } />
+                    <Route path="/about-me" component = { AboutMe } />
+                    <Route path="/buttons" component = { Welcome } />
+                    <Route path="/gallery" component = { Gallery } />
+                    <Route path="/technical" render = { () => <Technical views={this.state.views} /> } />
+                </Switch>
+              </Grid.Column>
+            </Transition>
             <Grid.Column width={2}></Grid.Column>
           </ Grid>
         </Sidebar.Pusher>
