@@ -18,10 +18,10 @@ export default (props) => {
         <Icon name='coffee' />
         About Me
       </Menu.Item>
-      <Menu.Item as='a' onClick={props.selectButtons} >
+      {/* <Menu.Item as='a' onClick={props.selectButtons} >
         <Icon name='stop circle' />
         Buttons
-      </Menu.Item>
+      </Menu.Item> */}
       <Menu.Item as='a' onClick={props.selectGallery} >
         <Icon name='image' />
         View Gallery
