@@ -28,32 +28,32 @@ body {
 }
 
 .background-hyperion {
-  background-image: url("/img/hyperion.jpg") !important;
+  background-image: url("/img/full-backgrounds/hyperion.jpg") !important;
   
 }
 
 .background-castle {
-  background-image: url("/img/castle.jpg") !important;
+  background-image: url("/img/full-backgrounds/castle.jpg") !important;
 }
 
 .background-earth {
-  background-image: url("/img/earth-light.jpg") !important;
+  background-image: url("/img/full-backgrounds/earth-light.jpg") !important;
 }
 
 .background-robot {
-  background-image: url("/img/robot-laputa.jpg") !important;
+  background-image: url("/img/full-backgrounds/robot-laputa.jpg") !important;
 }
 
 .background-night {
-  background-image: url("/img/night-sky.jpg") !important;
+  background-image: url("/img/full-backgrounds/night-sky.jpg") !important;
 }
 
 .background-wormhole {
-  background-image: url("/img/wormhole.jpg") !important;
+  background-image: url("/img/full-backgrounds/wormhole.jpg") !important;
 }
 
 .background-clockwork {
-  background-image: url("/img/clockwork.png") !important;
+  background-image: url("/img/full-backgrounds/clockwork.png") !important;
 }
 
 .card-image {
@@ -71,6 +71,60 @@ body {
 
 .gallery-grid-width {
   width: 1355px !important;
+}
+
+.gallery-divider {
+  margin: 0rem !important;
+}
+
+.welcome-pattern {
+  background-image: url("/img/vector-pattern.jpg") !important;
+}
+
+.welcome-fill {
+  background-color: rgb(212, 195, 179) !important;
+}
+
+.welcome-font-background {
+  background-color: rgb(150, 30, 30) !important;
+  padding-left: 2rem !important;
+  padding-top: 2rem !important;
+}
+
+.welcome-font {
+  font-size: 20px;
+  /* font-family: "Courier New"; */
+  color: rgb(255, 125, 125) !important;
+}
+
+.welcome-text {
+  background-color: rgb(255, 125, 125) !important;
+  color: rgb(150, 30, 30) !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 1rem !important;
+  padding-right: 2rem !important;
+  padding-bottom: 2rem !important;
+  text-align: bottom !important;
+  text-align: right !important;
+}
+
+.welcome-height {
+  height: 320px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0!important;
+}
+
+.welcome-picture {
+  height: 320px !important;
+  background-image: url("/img/fruit-vase.jpg");
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: 50% 50% !important;
+}
+
+.segment-no-border {
+  border: 0px !important;
 }
 
 .center-modal {

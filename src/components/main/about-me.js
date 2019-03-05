@@ -5,7 +5,7 @@ export default class AboutMe extends Component {
   
   render() {
     return (
-      <Segment  color="olive">
+      <Segment  color="olive" className='segment-no-border' >
         <Label color="olive" ribbon>About Me</Label>
         <Header as="h1" color="grey">Heya There!</Header>
         <Divider/>

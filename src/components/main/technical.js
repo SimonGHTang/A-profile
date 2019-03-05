@@ -19,7 +19,7 @@ export default class Profile extends Component {
   
   render() {
     return (
-      <Segment  color="grey">
+      <Segment  color="grey" className='segment-no-border' >
         <Label color="grey" ribbon>Technicals</Label>
         <Header as="h2" color="grey">Some Frameworks and Libraries used</Header>
 

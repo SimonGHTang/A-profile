@@ -5,7 +5,7 @@ export default class Profile extends Component {
   
   render() {
     return (
-      <Segment color="blue">
+      <Segment color="blue" className='segment-no-border' >
         <Label color="blue" ribbon>Profile</Label>
         <Grid divided>
           <Grid.Column  className='profile-image' width={8} >

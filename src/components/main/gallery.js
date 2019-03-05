@@ -7,7 +7,7 @@ export default class AboutMe extends Component {
   
   render() {
     return (
-      <Segment  color="violet">
+      <Segment  color="violet" className='segment-no-border' >
         <Label color="violet" ribbon>Gallery</Label>
         <Header as="h1" color="grey">Some Nice Pictures I like~</Header>
         <Divider/>
@@ -15,45 +15,45 @@ export default class AboutMe extends Component {
         <div className='gallery-scroll' >
           <Grid className='gallery-grid-width' divided centered >
             <Grid.Row centered >
-              <GalleryModule imageSource="img/castle.jpg"/>
-              <GalleryModule imageSource="img/planet-colour.jpg"/>
-              <GalleryModule imageSource="img/sunset-red.jpg"/>
+              <GalleryModule imageSource="img/full-backgrounds/castle.jpg"/>
+              <GalleryModule imageSource="img/full-backgrounds/planet-colour.jpg"/>
+              <GalleryModule imageSource="img/full-backgrounds/sunset-red.jpg"/>
             </Grid.Row>
-
+            <Divider className='gallery-divider' />
             <Grid.Row centered >
-              <GalleryModule imageSource="img/wormhole.jpg"/>
-              <GalleryModule imageSource="img/night-sky.jpg"/>
-              <GalleryModule imageSource="img/earth-light.jpg"/>
+              <GalleryModule imageSource="img/full-backgrounds/wormhole.jpg"/>
+              <GalleryModule imageSource="img/full-backgrounds/night-sky.jpg"/>
+              <GalleryModule imageSource="img/full-backgrounds/earth-light.jpg"/>
             </Grid.Row>
-
+            <Divider className='gallery-divider' />
             <Grid.Row centered >
-              <GalleryModule imageSource="img/ruined-castle.jpg"/>
-              <GalleryModule imageSource="img/citadel.jpg"/>
-              <GalleryModule imageSource="img/dracula-castle.jpg"/>
+              <GalleryModule imageSource="img/full-backgrounds/ruined-castle.jpg"/>
+              <GalleryModule imageSource="img/full-backgrounds/citadel.jpg"/>
+              <GalleryModule imageSource="img/full-backgrounds/dracula-castle.jpg"/>
             </Grid.Row>
-
+            <Divider className='gallery-divider' />
             <Grid.Row centered >
-              <GalleryModule imageSource="img/ship-sail.jpg"/>
-              <GalleryModule imageSource="img/dragon.jpg"/>
-              <GalleryModule imageSource="img/forest-dragon.jpg"/>
+              <GalleryModule imageSource="img/full-backgrounds/ship-sail.jpg"/>
+              <GalleryModule imageSource="img/full-backgrounds/dragon.jpg"/>
+              <GalleryModule imageSource="img/full-backgrounds/forest-dragon.jpg"/>
             </Grid.Row>
-            
+            <Divider className='gallery-divider' />
             <Grid.Row centered >
-              <GalleryModule imageSource="img/hyperion.jpg"/>
-              <GalleryModule imageSource="img/steampunk-ship.jpg"/>
-              <GalleryModule imageSource="img/strange-ship.jpg"/>
+              <GalleryModule imageSource="img/full-backgrounds/hyperion.jpg"/>
+              <GalleryModule imageSource="img/full-backgrounds/steampunk-ship.jpg"/>
+              <GalleryModule imageSource="img/full-backgrounds/strange-ship.jpg"/>
             </Grid.Row>
-
+            <Divider className='gallery-divider' />
             <Grid.Row centered >
-              <GalleryModule imageSource="img/robot-laputa.jpg"/>
-              <GalleryModule imageSource="img/robot-head.jpg"/>
-              <GalleryModule imageSource="img/clockwork.png"/>
+              <GalleryModule imageSource="img/full-backgrounds/robot-laputa.jpg"/>
+              <GalleryModule imageSource="img/full-backgrounds/robot-head.jpg"/>
+              <GalleryModule imageSource="img/full-backgrounds/clockwork.png"/>
             </Grid.Row>
-
+            <Divider className='gallery-divider' />
             <Grid.Row centered >
-              <GalleryModule imageSource="img/tree.jpg"/>
-              <GalleryModule imageSource="img/flower-pot.jpg"/>
-              <GalleryModule imageSource="img/bonsai-tree.jpg"/>
+              <GalleryModule imageSource="img/full-backgrounds/tree.jpg"/>
+              <GalleryModule imageSource="img/full-backgrounds/flower-pot.jpg"/>
+              <GalleryModule imageSource="img/full-backgrounds/bonsai-tree.jpg"/>
             </Grid.Row>
           </Grid>
         </div>
