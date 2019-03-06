@@ -28,7 +28,7 @@ export default class AboutMe extends Component {
           </Grid.Column>
 
           <Grid.Column>
-            <Image src="img/me.jpg" size="large" centered />
+            <Image src="img/me.jpg" size="small" centered />
           </Grid.Column>
         </Grid>
 

@@ -64,25 +64,40 @@ body {
   width: 185px !important;
 }
 
-.gallery-scroll {
-  height:780px !important;
+.gallery-height {
+  height:720px !important;
   overflow-y: auto !important;
+  justify-content: center !important;
 }
 
-.gallery-grid-width {
-  width: 1355px !important;
-}
-
-.gallery-divider {
+.no-space {
   margin: 0rem !important;
+  padding: 0rem !important;
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+
+.zoom {
+  overflow: visible !important;
+  transition: transform .2s; /* Animation */
+  position: relative !important;
+}
+
+.zoom:hover {
+  transform: scale(1.25); 
+  z-index: 5 !important;
 }
 
 .welcome-pattern {
   background-image: url("/img/vector-pattern.jpg") !important;
 }
 
-.welcome-fill {
+.welcome-fill-1 {
   background-color: rgb(212, 195, 179) !important;
+}
+
+.welcome-fill-2 {
+  background-color: rgb(182, 177, 172) !important;
 }
 
 .welcome-font-background {

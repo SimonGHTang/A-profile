@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Segment, Label, Header, Divider, Container, Image } from 'semantic-ui-react';
+import { Grid, Segment, Label, Header, Divider } from 'semantic-ui-react';
 
 export default class Welcome extends Component {
   
@@ -19,15 +19,15 @@ export default class Welcome extends Component {
               THIS IS MY ONLINE PORTFOLIO <br/>
               HAVE FUN BROWSING!</p>
             </Grid.Column>
-            <Grid.Column width={4} className="welcome-fill" ></Grid.Column>
+            <Grid.Column width={4} className="welcome-fill-1" ></Grid.Column>
             <Grid.Column width={4} className="welcome-pattern" ></Grid.Column>
-            <Grid.Column width={4}></Grid.Column>
+            <Grid.Column width={4} className="welcome-fill-2" ></Grid.Column>
             
           </Grid.Row>
           <Grid.Row className='welcome-height' >
             <Grid.Column width={4} className="welcome-pattern" ></Grid.Column>
             <Grid.Column width={4} className="welcome-picture" ></Grid.Column>
-            <Grid.Column width={4} className="welcome-fill" ></Grid.Column>
+            <Grid.Column width={4} className="welcome-fill-1" ></Grid.Column>
             <Grid.Column width={4} className='welcome-text' >
               <font size="4">As part of my practice, I made this front-end webpage.<br/>
               It was done as a show of my skills, as part of a portfolio and to introduce myself. <br/>
