@@ -100,28 +100,41 @@ body {
   background-color: rgb(182, 177, 172) !important;
 }
 
-.welcome-font-background {
+.welcome-fill-3 {
+  background-color: rgb(255, 125, 125) !important;
+}
+
+.welcome-fill-4 {
   background-color: rgb(150, 30, 30) !important;
-  padding-left: 2rem !important;
-  padding-top: 2rem !important;
 }
 
 .welcome-font {
   font-size: 20px;
-  /* font-family: "Courier New"; */
+  font-family: "Lucida Console";
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+.justify {
+  text-align: justify !important;
+}
+
+.welcome-color-1 {
+  color: rgb(150, 30, 30) !important;
+}
+
+.welcome-color-2 {
   color: rgb(255, 125, 125) !important;
 }
 
-.welcome-text {
-  background-color: rgb(255, 125, 125) !important;
-  color: rgb(150, 30, 30) !important;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  padding-top: 1rem !important;
-  padding-right: 2rem !important;
-  padding-bottom: 2rem !important;
-  text-align: bottom !important;
-  text-align: right !important;
+.align-bottom-right {
+  position: absolute !important;
+  bottom: 2rem !important;
+  right: 2rem !important;
 }
 
 .welcome-height {
@@ -130,9 +143,17 @@ body {
   padding-bottom: 0!important;
 }
 
-.welcome-picture {
+.welcome-picture-1 {
   height: 320px !important;
   background-image: url("/img/fruit-vase.jpg");
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: 50% 50% !important;
+}
+
+.welcome-picture-2 {
+  height: 320px !important;
+  background-image: url("/img/pot-plant.jpg");
   background-size: cover !important;
   background-repeat: no-repeat !important;
   background-position: 50% 50% !important;
