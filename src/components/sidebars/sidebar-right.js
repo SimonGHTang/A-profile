@@ -3,7 +3,8 @@ import { Sidebar, Menu, Icon, Divider, Popup } from "semantic-ui-react";
 
 export default (props) => {
   return (
-    <Sidebar as={Menu} animation='overlay' direction='right'
+    <Sidebar 
+      as={Menu} animation='overlay' direction='right'
       inverted vertical visible={props.visible} className="sidebar"
     >
       <Menu.Item as='h4' header><Icon name="external"  />External Links</Menu.Item>

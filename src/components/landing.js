@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Segment, Sidebar, Grid, Transition } from 'semantic-ui-react';
-import { Switch, Route } from 'react-router-dom';
 import '../App.css';
 
 import Welcome from "./main/welcome.js";
@@ -73,21 +72,29 @@ class Landing extends Component {
           selectTechnical={this.selectTechnical.bind(this)}
           viewBackground={this.toggleVisibility.bind(this)}
         />
-          
+
         <SidebarRight visible={this.state.sidebarVisible} />
+
         <Sidebar.Pusher>
           < Grid className="body-padding">
             <Grid.Column width={2}> </Grid.Column>
             <Transition visible={this.state.visible} animation='fade up' duration={500}>
               <Grid.Column width={12} onMouseLeave={this.sidebarShow.bind(this)} onMouseOver={this.sidebarHide.bind(this)} >
-                <Switch>
-                    <Route exact path="/" component = { Welcome } />
-                    <Route path="/profile" component = { Profile } />
-                    <Route path="/about-me" component = { AboutMe } />
-                    <Route path="/buttons" component = { Welcome } />
-                    <Route path="/gallery" component = { Gallery } />
-                    <Route path="/technical" render = { () => <Technical views={this.state.views} /> } />
-                </Switch>
+                <Grid.Row className="central-column" >
+                  <Welcome/>
+                </Grid.Row>
+                <Grid.Row className="central-column" >
+                  <Profile/>
+                </Grid.Row>
+                <Grid.Row className="central-column" >
+                  <AboutMe/>
+                </Grid.Row>
+                <Grid.Row className="central-column" >
+                  <Gallery/>
+                </Grid.Row>
+                <Grid.Row className="central-column" >
+                  <Technical view={this.state.views} />
+                </Grid.Row>
               </Grid.Column>
             </Transition>
             <Grid.Column width={2}></Grid.Column>

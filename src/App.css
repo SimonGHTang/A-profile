@@ -29,31 +29,37 @@ body {
 
 .background-hyperion {
   background-image: url("/img/full-backgrounds/hyperion.jpg") !important;
-  
+  z-index: 10 !important;  
 }
 
 .background-castle {
   background-image: url("/img/full-backgrounds/castle.jpg") !important;
+  z-index: 10 !important;
 }
 
 .background-earth {
   background-image: url("/img/full-backgrounds/earth-light.jpg") !important;
+  z-index: 10 !important;
 }
 
 .background-robot {
   background-image: url("/img/full-backgrounds/robot-laputa.jpg") !important;
+  z-index: 10 !important;
 }
 
 .background-night {
   background-image: url("/img/full-backgrounds/night-sky.jpg") !important;
+  z-index: 10 !important;
 }
 
 .background-wormhole {
   background-image: url("/img/full-backgrounds/wormhole.jpg") !important;
+  z-index: 10 !important;
 }
 
 .background-clockwork {
   background-image: url("/img/full-backgrounds/clockwork.png") !important;
+  z-index: 10 !important;
 }
 
 .card-image {
@@ -62,6 +68,9 @@ body {
 
 .sidebar {
   width: 185px !important;
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0 !important;
 }
 
 .gallery-height {
@@ -85,7 +94,7 @@ body {
 
 .zoom:hover {
   transform: scale(1.25); 
-  z-index: 5 !important;
+  z-index: 10 !important;
 }
 
 .welcome-pattern {
@@ -161,6 +170,10 @@ body {
 
 .segment-no-border {
   border: 0px !important;
+}
+
+.central-column {
+  height: 900px !important;
 }
 
 .center-modal {
